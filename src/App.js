@@ -1,7 +1,15 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import GlobalStyles from "./styles/GlobalStyles";
+
 const App = () => {
   return (
-    <div className="App">
-    </div>
+    <Router>
+        <GlobalStyles />
+        <Routes>
+            <Route path = "/" exact element = {<Home />}/>
+        </Routes>
+    </Router>
   );
 }
 
