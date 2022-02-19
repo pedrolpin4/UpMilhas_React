@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { TextField } from '@mui/material';
 import styled from "styled-components"
-import baloons from '../../assets/aviao7.jpg';
+import ap from '../../assets/airplane.jpg';
+import apMobile from '../../assets/airplaneMobile.jpeg';
 import Button from "../shared/Button";
 import YoutubeId from "./YoutubeId";
 
@@ -110,7 +111,7 @@ const RegisterContainer = styled.section`
     align-items: center;
     justify-content: center;
     padding: 108px 50px 50px 50px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(${baloons});
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(${ap});
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -126,10 +127,18 @@ const RegisterContainer = styled.section`
         flex-direction: column;
 
         iframe {
-            width: 100%;
+            width: 90vw;
+            margin-right: 0;
             height: 300px;
             margin-bottom: 100px;
         }
+    }
+
+    @media (max-width: 600px) {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(${apMobile});
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
 
 `;
