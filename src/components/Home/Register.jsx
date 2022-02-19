@@ -7,7 +7,7 @@ import YoutubeId from "./YoutubeId";
 const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [phone, setPhone] = useState('');
 
     return (
         <RegisterContainer>
@@ -24,7 +24,7 @@ const Register = () => {
                     </FormTitle>
                     <FormInput placeholder="Name" value={name} onChange ={(e) => setName(e.target.value)}/>
                     <FormInput placeholder="Email" type="email" value={email} onChange ={(e) => setEmail(e.target.value)}/>
-                    <FormInput placeholder="Senha" type= "password" value={password} onChange ={(e) => setPassword(e.target.value)}/>
+                    <FormInput placeholder="Telefone" type= "name" value={phone} onChange ={(e) => setPhone(e.target.value)}/>
                     <Button padding = "0.8rem 5rem"  marginTop = "20px" type="submit">
                         Cadastrar
                     </Button>
@@ -45,6 +45,8 @@ const RegisterContainer = styled.section`
     padding: 50px 50px 50px 50px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${baloons});
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-blend-mode: normal, darken;
 
     iframe {
