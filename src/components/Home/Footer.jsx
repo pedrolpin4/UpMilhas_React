@@ -69,6 +69,11 @@ const FooterContainer = styled.footer`
     width: 100vw;
     height: 366px;
     background: #3E4E50;
+
+    @media(max-width: 1000px) {
+        flex-direction: column;
+        height: auto;
+    }
 `;
 
 const GoogleMap = styled.div`
@@ -85,6 +90,18 @@ const GoogleMap = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
+    }
+
+    @media(max-width: 1000px) {
+        width: 90vw;
+        height: 300px;
+        margin: 75px 0 75px 0;
+
+        iframe {
+            width: 90vw;
+
+        }
+
     }
 `
 
@@ -114,6 +131,12 @@ const PageGuide = styled.footer`
             color: #FF6B00;
         }
     }
+
+    @media(max-width: 1000px) {
+        align-items: center;
+        width: 90vw;
+        margin: 0;
+    }
 `;
 
 const Contacts = styled.footer`
@@ -142,5 +165,10 @@ const Contacts = styled.footer`
         &:hover {
             color: #FF6B00;
         }
+    }
+
+    @media(max-width: 1000px) {
+        width: 90vw;
+        margin: 0;
     }
 `;

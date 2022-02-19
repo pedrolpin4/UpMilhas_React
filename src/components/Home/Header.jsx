@@ -3,7 +3,7 @@ import whiteLogo from '../../assets/white-logo.png';
 import blackLogo from '../../assets/black-logo.png';
 import Button from "../shared/Button";
 
-const Header = ({ intersected, registerRef, howWorksRef, whoWeAreRef, faqRef, headerShown, setHeaderShown }) => {
+const Header = ({ intersected, registerRef, howWorksRef, whoWeAreRef, faqRef, headerShown, setHeaderShown}) => {    
     return(
         <HeaderContainer headerShown = {headerShown} onMouseOver = {() => setHeaderShown(true)}>
             <SectionsWrapper>
@@ -30,7 +30,7 @@ const Header = ({ intersected, registerRef, howWorksRef, whoWeAreRef, faqRef, he
                 </SectionName>
             </SectionsWrapper>
             <a href = "https://www.hopmilhas.com.br" target={"_blank"} rel = "noreferrer">
-                <Button padding = "0.8rem 3rem">
+                <Button padding = "0.8rem 3rem" paddingMobile = "0.6rem 2.3rem">
                     Login
                 </Button>
             </a>
@@ -58,6 +58,15 @@ const HeaderContainer = styled.header`
         width: 150px;
         margin-right: 20px;
     }
+
+    @media (max-width: 1000px) {
+        height: 90px;
+        padding: 0px 25px 0px 10px;
+
+        img{
+            width: 100px;
+        }
+    }
 `;
 
 const SectionsWrapper = styled.div`
@@ -67,6 +76,7 @@ const SectionsWrapper = styled.div`
 
 const SectionName = styled.p`
     cursor: pointer;
+    text-align: center;
     font-weight: 300;
     font-size: 24px;
     margin: 0 25px;
@@ -75,6 +85,10 @@ const SectionName = styled.p`
 
     &:hover {
         color: #FF6B00;
+    }
+
+    @media (max-width: 1000px) {
+        display: none;
     }
 `
 

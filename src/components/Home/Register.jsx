@@ -15,13 +15,14 @@ const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) 
 
     useEffect(() => {
         const observationOptions = {
-            rootMargin: "-108px 0px 0px 0px",
+            rootMargin: "0px 0px 0px 0px",
             threshold: 0.2,
         };
 
         const headerObserver = new IntersectionObserver(([entry]) => {
             if(!entry.isIntersecting){
                 setHeaderShown(true)
+                setIntersected(2)
             }
 
             if(entry.isIntersecting){
@@ -37,6 +38,8 @@ const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) 
             headerObserver.observe(registerRef.current)
         }
     }, [registerRef, setHeaderShown, setIntersected, intersected]);
+
+
 
     return (
         <RegisterContainer ref={registerRef}>
@@ -90,7 +93,7 @@ const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) 
                         helperText={telError ? "Digite um telefone válido DDD + número" : ''}
                         sx = {{width: '100%', height: 49, marginBottom: 4, borderRadius:'50'}}
                     />
-                    <Button padding = "0.8rem 5rem"  marginTop = "20px" type="submit">
+                    <Button padding = "0.8rem 5rem"  paddingMobile = "0.8rem 5rem" marginTop = "20px" type="submit">
                         Cadastrar
                     </Button>
                 </FormContent>
@@ -118,6 +121,17 @@ const RegisterContainer = styled.section`
         height: 22.5vw;
         margin-right: 10vw;
     }
+
+    @media (max-width: 1000px) {
+        flex-direction: column;
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 100px;
+        }
+    }
+
 `;
 
 const FormWrapper = styled.div`

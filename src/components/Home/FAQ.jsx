@@ -59,6 +59,12 @@ const FAQTitle = styled.h1`
     text-align: center;
     color: #000000;
     margin-bottom: 70px;
+
+    @media(max-width: 1000px) {
+        font-size: 32px;
+        line-height: 42px;
+        margin-bottom: 45px;
+    }
 `
 
 export default FAQ;

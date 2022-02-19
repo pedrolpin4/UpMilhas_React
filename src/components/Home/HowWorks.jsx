@@ -9,7 +9,6 @@ const HowWorks = ({howWorksRef, setIntersected, setHeaderShown}) => {
 
         const headerObserver = new IntersectionObserver(([entry]) => {
             if(entry.isIntersecting){
-                console.log('interceptei');
                 setIntersected(2)
             } else{
                 setIntersected(prev => prev)
@@ -25,7 +24,7 @@ const HowWorks = ({howWorksRef, setIntersected, setHeaderShown}) => {
     return(
         <HowWorksContainer ref = {howWorksRef}>
             <HowWorksTitle>
-                Quais são os benefícios de ser um <span>parceiro UP Milhas</span>
+                Quais são os benefícios de ser um <span>parceiro UP Milhas?</span>
             </HowWorksTitle>
         </HowWorksContainer>
     )
@@ -49,6 +48,11 @@ const HowWorksTitle = styled.h1`
 
     span {
         color: #FF6B00;
+    }
+
+    @media(max-width: 1000px) {
+        font-size: 32px;
+        line-height: 42px;
     }
 `
 

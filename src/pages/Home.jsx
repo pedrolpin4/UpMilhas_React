@@ -10,7 +10,7 @@ import styled from "styled-components";
 
 const Home = () => {
     const [intersected, setIntersected] = useState(1);
-    const [headerShown, setHeaderShown] = useState(false)
+    const [headerShown, setHeaderShown] = useState(false);
     const registerRef = useRef();
     const howWorksRef = useRef();
     const whoWeAreRef = useRef();
@@ -20,9 +20,9 @@ const Home = () => {
     return(
         <>
             <Header intersected = {intersected} setIntersected = {setIntersected} registerRef = {registerRef} setHeaderShown = {setHeaderShown}
-                howWorksRef = {howWorksRef} whoWeAreRef = {whoWeAreRef} faqRef = {faqRef} headerShown = {headerShown}/>
+                howWorksRef = {howWorksRef} whoWeAreRef = {whoWeAreRef} faqRef = {faqRef} headerShown = {headerShown} />
             <main>
-                <Register registerRef = {registerRef} setIntersected = {setIntersected} setHeaderShown = {setHeaderShown}/>
+                <Register registerRef = {registerRef} setIntersected = {setIntersected} setHeaderShown = {setHeaderShown} />
                 <HowWorks howWorksRef = {howWorksRef} setIntersected = {setIntersected}/>
                 <WhoWeAre whoWeAreRef = {whoWeAreRef} setIntersected = {setIntersected}/>
                 <FAQ faqRef = {faqRef} setIntersected = {setIntersected}/>
@@ -51,6 +51,11 @@ const Float = styled.a`
     font-size:30px;
 	box-shadow: 2px 2px 3px #999;
     z-index:100;
+
+    @media(max-width: 1000px) {
+        right: 20px;
+        bottom: 20px;
+    }
 `;
 
 export default Home;

@@ -50,6 +50,11 @@ const WhoWeAreTitle = styled.h1`
     span {
         color: #FF6B00;
     }
+
+    @media(max-width: 1000px) {
+        font-size: 32px;
+        line-height: 42px;
+    }
 `
 
 export default WhoWeAre;
