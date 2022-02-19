@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { TextField } from '@mui/material';
 import styled from "styled-components"
 import ap from '../../assets/airplane.jpg';
-import apMobile from '../../assets/airplaneMobile.jpeg';
+import apMobile from '../../assets/airplaneMobile.jpg';
 import Button from "../shared/Button";
 import YoutubeId from "./YoutubeId";
 
@@ -135,10 +135,7 @@ const RegisterContainer = styled.section`
     }
 
     @media (max-width: 600px) {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(${apMobile});
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-image: url(${apMobile});
 
         iframe{
             width: 90vw;
