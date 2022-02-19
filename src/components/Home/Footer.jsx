@@ -72,6 +72,7 @@ const FooterContainer = styled.footer`
 
     @media(max-width: 1000px) {
         flex-direction: column;
+        align-items: center;
         height: auto;
     }
 `;
@@ -96,12 +97,6 @@ const GoogleMap = styled.div`
         width: 90vw;
         height: 300px;
         margin: 75px 0 75px 0;
-
-        iframe {
-            width: 90vw;
-
-        }
-
     }
 `
 

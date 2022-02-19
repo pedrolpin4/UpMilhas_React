@@ -55,6 +55,11 @@ const WhoWeAreTitle = styled.h1`
         font-size: 32px;
         line-height: 42px;
     }
+
+
+    @media(max-width: 600px) {
+        width: 90vw;
+    }
 `
 
 export default WhoWeAre;

@@ -49,6 +49,10 @@ const FAQContainer = styled.section`
     flex-direction: column;
     align-items: center;
     padding: 50px;
+
+    @media(max-width: 1000px) {
+        padding: 30px;
+    }
 `
 
 const FAQTitle = styled.h1`
@@ -64,6 +68,11 @@ const FAQTitle = styled.h1`
         font-size: 32px;
         line-height: 42px;
         margin-bottom: 45px;
+    }
+
+
+    @media(max-width: 600px) {
+        width: 90vw;
     }
 `
 
