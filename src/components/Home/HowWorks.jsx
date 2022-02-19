@@ -1,8 +1,28 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 
-const HowWorks = () => {
+const HowWorks = ({howWorksRef, setIntersected}) => {
+    useEffect(() => {
+        const observationOptions = {
+            rootMargin: "0px 0px -108px 0px",
+        };
+
+        const headerObserver = new IntersectionObserver(([entry]) => {
+            if(entry.isIntersecting){
+                setIntersected(2)
+            } else{
+                setIntersected(prev => prev)
+            }
+
+        }, observationOptions)
+
+        if(howWorksRef.current){
+            headerObserver.observe(howWorksRef.current)
+        }
+    }, [howWorksRef, setIntersected]);
+
     return(
-        <HowWorksContainer>
+        <HowWorksContainer ref = {howWorksRef}>
             <HowWorksTitle>
                 Quais são os benefícios de ser um <span>parceiro UP Milhas</span>
             </HowWorksTitle>

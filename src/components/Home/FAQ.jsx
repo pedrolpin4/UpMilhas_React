@@ -1,10 +1,30 @@
 import styled from "styled-components";
 import List from '@mui/material/List';
 import Question from "./Question";
+import { useEffect } from "react";
 
-const FAQ = () => {
+const FAQ = ({ faqRef, setIntersected}) => {
+    useEffect(() => {
+        const observationOptions = {
+            rootMargin: "0px 0px -108px 0px",
+        };
+
+        const headerObserver = new IntersectionObserver(([entry]) => {
+            if(entry.isIntersecting){
+                setIntersected(4)
+            } else{
+                setIntersected(prev => prev)
+            }
+
+        }, observationOptions)
+
+        if(faqRef.current){
+            headerObserver.observe(faqRef.current)
+        }
+    }, [faqRef, setIntersected]);
+
     return(
-        <FAQContainer>
+        <FAQContainer ref = {faqRef}>
             <FAQTitle>
                 Perguntas Frequentes
             </FAQTitle>

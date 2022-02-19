@@ -1,8 +1,29 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 
-const WhoWeAre = () => {
+const WhoWeAre = ({ whoWeAreRef, setIntersected}) => {
+    
+    useEffect(() => {
+        const observationOptions = {
+            rootMargin: "0px 0px -108px 0px",
+        };
+
+        const headerObserver = new IntersectionObserver(([entry]) => {
+            if(entry.isIntersecting){
+                setIntersected(3)
+            } else{
+                setIntersected(prev => prev)
+            }
+
+        }, observationOptions)
+
+        if(whoWeAreRef.current){
+            headerObserver.observe(whoWeAreRef.current)
+        }
+    }, [whoWeAreRef, setIntersected]);
+
     return(
-        <WhoWeAreContainer>
+        <WhoWeAreContainer ref={whoWeAreRef}>
             <WhoWeAreTitle>
                 Por que comprar com <span>UP Milhas?</span>
             </WhoWeAreTitle>

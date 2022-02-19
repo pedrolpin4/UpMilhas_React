@@ -2,21 +2,29 @@ import styled from "styled-components";
 import whiteLogo from '../../assets/white-logo.png';
 import Button from "../shared/Button";
 
-const Header = ({ intersected, setIntersected }) => {
+const Header = ({ intersected, registerRef, howWorksRef, whoWeAreRef, faqRef }) => {
     return(
         <HeaderContainer>
             <SectionsWrapper>
                 <img src={whiteLogo} alt="UP milhas logo"/>
-                <SectionName isSelected = {intersected === 1} onClick = {() => setIntersected(1)}>
+                <SectionName isSelected = {intersected === 1} onClick = {() => {
+                    registerRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
+                }}>
                     Cadastro
                 </SectionName>
-                <SectionName isSelected = {intersected === 2} onClick = {() => setIntersected(2)}>
+                <SectionName isSelected = {intersected === 2} onClick = {() => {
+                    howWorksRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
+                }}>
                     Como Funciona
                 </SectionName>
-                <SectionName isSelected = {intersected === 3} onClick = {() => setIntersected(3)}>
+                <SectionName isSelected = {intersected === 3} onClick = {() => {
+                    whoWeAreRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
+                }}>
                     Quem Somos
                 </SectionName>
-                <SectionName isSelected = {intersected === 4} onClick = {() => setIntersected(4)}>
+                <SectionName isSelected = {intersected === 4} onClick = {() => {
+                    faqRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
+                }}>
                     Perguntas Frequentes
                 </SectionName>
             </SectionsWrapper>

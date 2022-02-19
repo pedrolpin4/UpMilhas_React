@@ -2,23 +2,31 @@ import styled from "styled-components"
 import { BsWhatsapp, BsInstagram } from 'react-icons/bs';
 import { GoMail } from 'react-icons/go';
 
-const Footer = () => {
+const Footer = ({ encripted, registerRef, howWorksRef, whoWeAreRef, faqRef}) => {
     return(
         <FooterContainer>
             <PageGuide>
                 <h3>
                     Mapa da Página
                 </h3>
-                <p>
+                <p onClick = {() => {
+                    registerRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
+                }}>
                     Cadastro
                 </p>
-                <p>
+                <p onClick = {() => {
+                    howWorksRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
+                }}>
                     Como Funciona
                 </p>
-                <p>
+                <p onClick = {() => {
+                    whoWeAreRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
+                }}>
                     Quem Somos
                 </p>
-                <p>
+                <p onClick = {() => {
+                    faqRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
+                }}>
                     Perguntas Frequentes
                 </p>
             </PageGuide>
@@ -28,19 +36,19 @@ const Footer = () => {
                     jsname="L5Fo6c" 
                     className="YMEQtf" 
                     sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-modals" 
-                    frameborder="0" 
+                    frameBorder="0" 
                     aria-label="Map, R. José Getúlio - Liberdade" src="https://maps-api-ssl.google.com/maps?hl=en-US&amp;ll=-23.568436,-46.634658&amp;output=embed&amp;q=R.+Jos%C3%A9+Get%C3%BAlio+-+Liberdade,+S%C3%A3o+Paulo+-+SP,+Brazil+(R.+Jos%C3%A9+Get%C3%BAlio+-+Liberdade)&amp;z=17" 
-                    allowfullscreen="" 
+                    allowFullScreen="" 
                 />
             </GoogleMap>
             <Contacts>
                 <h3>
                     Contatos
                 </h3>
-                <a href = "https://www.hopmilhas.com.br" target={"_blank"} rel = "noreferrer">
+                <a href={`https://api.whatsapp.com/send?phone=5521967431453&text=${encripted}.`} target={"_blank"} rel = "noreferrer">
                    <BsWhatsapp size = {50}/>
                 </a>
-                <a href = "https://www.hopmilhas.com.br" target={"_blank"} rel = "noreferrer">
+                <a href = "https://www.instagram.com/upmilhasaereas" target={"_blank"} rel = "noreferrer">
                     <BsInstagram size = {50} />
                 </a>
                 <a href = "https://www.hopmilhas.com.br" target={"_blank"} rel = "noreferrer">
