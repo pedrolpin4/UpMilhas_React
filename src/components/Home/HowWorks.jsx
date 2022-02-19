@@ -1,14 +1,15 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 
-const HowWorks = ({howWorksRef, setIntersected}) => {
+const HowWorks = ({howWorksRef, setIntersected, setHeaderShown}) => {
     useEffect(() => {
         const observationOptions = {
-            rootMargin: "0px 0px -108px 0px",
+            rootMargin: "-108px 0px 0px 0px",
         };
 
         const headerObserver = new IntersectionObserver(([entry]) => {
             if(entry.isIntersecting){
+                setHeaderShown(true)
                 setIntersected(2)
             } else{
                 setIntersected(prev => prev)
@@ -19,7 +20,7 @@ const HowWorks = ({howWorksRef, setIntersected}) => {
         if(howWorksRef.current){
             headerObserver.observe(howWorksRef.current)
         }
-    }, [howWorksRef, setIntersected]);
+    }, [howWorksRef, setHeaderShown, setIntersected]);
 
     return(
         <HowWorksContainer ref = {howWorksRef}>

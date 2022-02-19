@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { TextField } from '@mui/material';
 import styled from "styled-components"
-import baloons from '../../assets/baloons.jpg';
+import baloons from '../../assets/aviao7.jpg';
 import Button from "../shared/Button";
 import YoutubeId from "./YoutubeId";
 
-const Register = ({ registerRef, setIntersected }) => {
+const Register = ({ registerRef, setIntersected, setHeaderShown }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -15,12 +15,13 @@ const Register = ({ registerRef, setIntersected }) => {
 
     useEffect(() => {
         const observationOptions = {
-            rootMargin: "0px 0px -800px 0px",
+            rootMargin: "0px 0px -108px 0px",
         };
 
         const headerObserver = new IntersectionObserver(([entry]) => {
             if(entry.isIntersecting){
-                setIntersected(1)
+                setHeaderShown(false);
+                setIntersected(1);
             } else{
                 setIntersected(prev => prev)
             }
@@ -30,7 +31,7 @@ const Register = ({ registerRef, setIntersected }) => {
         if(registerRef.current){
             headerObserver.observe(registerRef.current)
         }
-    }, [registerRef, setIntersected]);
+    }, [registerRef, setIntersected, setHeaderShown]);
 
     return (
         <RegisterContainer ref={registerRef}>
@@ -96,13 +97,13 @@ const Register = ({ registerRef, setIntersected }) => {
 export default Register;
 
 const RegisterContainer = styled.section`
-    margin-top: 108px;
     font-family: Roboto;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 50px 50px 50px 50px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${baloons});
+    height: 95vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(${baloons});
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

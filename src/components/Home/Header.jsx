@@ -1,30 +1,31 @@
 import styled from "styled-components";
 import whiteLogo from '../../assets/white-logo.png';
+import blackLogo from '../../assets/black-logo.png';
 import Button from "../shared/Button";
 
-const Header = ({ intersected, registerRef, howWorksRef, whoWeAreRef, faqRef }) => {
+const Header = ({ intersected, registerRef, howWorksRef, whoWeAreRef, faqRef, headerShown, setHeaderShown }) => {
     return(
-        <HeaderContainer>
+        <HeaderContainer headerShown = {headerShown} onMouseOver = {() => setHeaderShown(true)}>
             <SectionsWrapper>
-                <img src={whiteLogo} alt="UP milhas logo"/>
+                <img src={headerShown ? whiteLogo : blackLogo} alt="UP milhas logo"/>
                 <SectionName isSelected = {intersected === 1} onClick = {() => {
                     registerRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
-                }}>
+                }} headerShown = {headerShown}>
                     Cadastro
                 </SectionName>
                 <SectionName isSelected = {intersected === 2} onClick = {() => {
                     howWorksRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
-                }}>
+                }} headerShown = {headerShown}>
                     Como Funciona
                 </SectionName>
                 <SectionName isSelected = {intersected === 3} onClick = {() => {
                     whoWeAreRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
-                }}>
+                }} headerShown = {headerShown}>
                     Quem Somos
                 </SectionName>
                 <SectionName isSelected = {intersected === 4} onClick = {() => {
                     faqRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
-                }}>
+                }} headerShown = {headerShown}>
                     Perguntas Frequentes
                 </SectionName>
             </SectionsWrapper>
@@ -42,7 +43,7 @@ const HeaderContainer = styled.header`
     top: 0;
     left: 0;
     font-family: Roboto;
-    background: #3E4E50;
+    background: ${props => props.headerShown ?  "#3E4E50" : "transparent"};
     width: 100vw;
     height: 108px;
     display: flex;
@@ -50,7 +51,8 @@ const HeaderContainer = styled.header`
     align-items: center;
     padding-right: 40px;
     z-index: 2;
-    box-shadow: 2px 0px 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: ${props => props.headerShown ? "2px 0px 2px 2px rgba(0, 0, 0, 0.5)" : "none"};
+    transition: all .4s;
 
     img {
         width: 150px;
@@ -68,7 +70,7 @@ const SectionName = styled.p`
     font-weight: 300;
     font-size: 24px;
     margin: 0 25px;
-    color: ${props => props.isSelected ? "#FF6B00" : "#FFFFFF"};
+    color: ${props => props.isSelected ? "#FF6B00" : (props.headerShown ? "#FFFFFF" : "#000")};
     transition: all .4s;
 
     &:hover {

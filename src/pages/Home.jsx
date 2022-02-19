@@ -10,6 +10,7 @@ import styled from "styled-components";
 
 const Home = () => {
     const [intersected, setIntersected] = useState(1);
+    const [headerShown, setHeaderShown] = useState(false)
     const registerRef = useRef();
     const howWorksRef = useRef();
     const whoWeAreRef = useRef();
@@ -18,9 +19,10 @@ const Home = () => {
     const encripted = '';
     return(
         <>
-            <Header intersected = {intersected} setIntersected = {setIntersected} registerRef = {registerRef} howWorksRef = {howWorksRef} whoWeAreRef = {whoWeAreRef} faqRef = {faqRef}/>
+            <Header intersected = {intersected} setIntersected = {setIntersected} registerRef = {registerRef} setHeaderShown = {setHeaderShown}
+                howWorksRef = {howWorksRef} whoWeAreRef = {whoWeAreRef} faqRef = {faqRef} headerShown = {headerShown}/>
             <main>
-                <Register registerRef = {registerRef} setIntersected = {setIntersected}/>
+                <Register registerRef = {registerRef} setIntersected = {setIntersected} setHeaderShown = {setHeaderShown}/>
                 <HowWorks howWorksRef = {howWorksRef} setIntersected = {setIntersected}/>
                 <WhoWeAre whoWeAreRef = {whoWeAreRef} setIntersected = {setIntersected}/>
                 <FAQ faqRef = {faqRef} setIntersected = {setIntersected}/>
