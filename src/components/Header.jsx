@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import whiteLogo from '../assets/white-logo.png';
+import Button from "./Button";
 
 const Header = ({ intersected, setIntersected }) => {
     return(
@@ -19,14 +20,19 @@ const Header = ({ intersected, setIntersected }) => {
                     Perguntas Frequentes
                 </SectionName>
             </SectionsWrapper>
-            <LoginButton href = "https://www.hopmilhas.com.br" target={"_blank"} rel = "noreferrer">
-                Login
-            </LoginButton>
+            <a href = "https://www.hopmilhas.com.br" target={"_blank"} rel = "noreferrer">
+                <Button padding = "0.8rem 3rem">
+                    Login
+                </Button>
+            </a>
         </HeaderContainer>
     )
 }
 
 const HeaderContainer = styled.header`
+    position: fixed;
+    top: 0;
+    left: 0;
     font-family: Roboto;
     background: #3E4E50;
     width: 100vw;
@@ -57,51 +63,6 @@ const SectionName = styled.p`
 
     &:hover {
         color: #FF6B00;
-    }
-`
-
-const LoginButton = styled.a`
-    cursor: pointer;
-    position: relative;
-    backface-visibility: hidden;
-    text-decoration: none;
-    display: inline-block;
-    font-weight: 300;
-    background-color: #FF6B00;
-    color: #fff;
-    padding: 0.8rem 2.4rem;
-    border-radius: 3rem;
-    font-size: 1.3rem;
-    transition: all .2s;
-    border: none;
-    cursor: pointer; 
-
-    &:hover{
-        transform: translateY(-0.3rem);
-        box-shadow: 0 1rem 2rem rgba(0,0,0, .2);
-        &::after{
-            transform: scaleX(1.4) scaleY(1.6);
-            opacity: 0;
-        }
-    }
-    
-    &:active{
-        transform: translateY(-0.1rem);
-        box-shadow: 0 0.5rem 1rem rgba(0,0,0, .2);
-    }
-
-    &::after{
-        content: "";
-        display: inline-block;
-        height: 100%;
-        width: 100%;
-        border-radius: 3rem;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: all .4s;
-        background-color: #FF6B00;
-        z-index: -1;
     }
 `
 
