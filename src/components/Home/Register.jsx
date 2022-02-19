@@ -135,7 +135,11 @@ const RegisterContainer = styled.section`
     }
 
     @media (max-width: 600px) {
-        background-image: url(${apMobile});
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(${apMobile});
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-blend-mode: normal, darken;
 
         iframe{
             width: 90vw;
