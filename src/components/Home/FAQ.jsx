@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import List from '@mui/material/List';
+import Question from "./Question";
 
 const FAQ = () => {
     return(
@@ -6,6 +8,17 @@ const FAQ = () => {
             <FAQTitle>
                 Perguntas Frequentes
             </FAQTitle>
+            <List
+                sx={{ width: '100%', maxWidth: 1200, bgcolor: 'background.paper' }}
+                component="nav"
+                aria-labelledby="nested-list-subheader"
+            >
+                <Question question= "Por que comprar milhas" answer = "Porque é muito foda"/>
+                <Question question= "Por que comprar milhas" answer = "Porque é muito foda"/>
+                <Question question= "Por que comprar milhas" answer = "Porque é muito foda"/>
+                <Question question= "Por que comprar milhas" answer = "Porque é muito foda"/>
+                <Question question= "Por que comprar milhas" answer = "Porque é muito foda"/>
+            </List>
         </FAQContainer>
     )
 }
@@ -13,7 +26,8 @@ const FAQ = () => {
 const FAQContainer = styled.section`
     height: 745px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 50px;
 `
 
@@ -24,6 +38,7 @@ const FAQTitle = styled.h1`
     line-height: 56px;
     text-align: center;
     color: #000000;
+    margin-bottom: 70px;
 `
 
 export default FAQ;

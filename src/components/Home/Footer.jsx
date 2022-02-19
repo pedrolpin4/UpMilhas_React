@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import { BsWhatsapp, BsInstagram } from 'react-icons/bs';
+import { GoMail } from 'react-icons/go';
 
 const Footer = () => {
     return(
@@ -20,19 +22,30 @@ const Footer = () => {
                     Perguntas Frequentes
                 </p>
             </PageGuide>
+            <GoogleMap>
+                <iframe 
+                    title = "map" 
+                    jsname="L5Fo6c" 
+                    className="YMEQtf" 
+                    sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-modals" 
+                    frameborder="0" 
+                    aria-label="Map, R. José Getúlio - Liberdade" src="https://maps-api-ssl.google.com/maps?hl=en-US&amp;ll=-23.568436,-46.634658&amp;output=embed&amp;q=R.+Jos%C3%A9+Get%C3%BAlio+-+Liberdade,+S%C3%A3o+Paulo+-+SP,+Brazil+(R.+Jos%C3%A9+Get%C3%BAlio+-+Liberdade)&amp;z=17" 
+                    allowfullscreen="" 
+                />
+            </GoogleMap>
             <Contacts>
                 <h3>
                     Contatos
                 </h3>
-                <p>
-                    WhatsApp
-                </p>
-                <p> 
-                    Email
-                </p>
-                <p>
-                    Instagram
-                </p>
+                <a href = "https://www.hopmilhas.com.br" target={"_blank"} rel = "noreferrer">
+                   <BsWhatsapp size = {50}/>
+                </a>
+                <a href = "https://www.hopmilhas.com.br" target={"_blank"} rel = "noreferrer">
+                    <BsInstagram size = {50} />
+                </a>
+                <a href = "https://www.hopmilhas.com.br" target={"_blank"} rel = "noreferrer">
+                    <GoMail size = {60} />
+                </a>
             </Contacts>
         </FooterContainer>
     )
@@ -41,22 +54,85 @@ const Footer = () => {
 export default Footer;
 
 const FooterContainer = styled.footer`
+    font-family: Roboto;
     display: flex;
+    justify-content: center;
     padding: 30px;
     width: 100vw;
     height: 366px;
     background: #3E4E50;
 `;
 
+const GoogleMap = styled.div`
+    position: relative;
+    display: flex;
+    width: 30vw;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-right: 5vw;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+`
+
 const PageGuide = styled.footer`
     display: flex;
     flex-direction: column;
-    margin-right: 30px;
+    width: 20vw;
+    margin-right: 7vw;
+
+    h3 {
+        margin-bottom: 25px;
+        font-size: 2rem;
+        font-weight: 300;
+        color: #FF6B00;
+    }
+
+    p {
+        cursor: pointer;
+        font-weight: 300;
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+        line-height: 37px;
+        color: #FFFEFE;
+        transition: all .4s;
+
+        &:hover {
+            color: #FF6B00;
+        }
+    }
 `;
 
 const Contacts = styled.footer`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 30px;
+    width: 20vw;
+
+    h3 {
+        margin-bottom: 25px;
+        font-size: 2rem;
+        font-weight: 300;
+        color: #FF6B00;
+    }
+
+    a {
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: 300;
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+        line-height: 37px;
+        color: #FFFEFE;
+        transition: all .4s;
+
+        &:hover {
+            color: #FF6B00;
+        }
+    }
 `;

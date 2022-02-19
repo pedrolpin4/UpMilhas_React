@@ -12,7 +12,7 @@ const Register = () => {
     return (
         <RegisterContainer>
             <div>
-                <YoutubeId id = {"qgaRVvAKoqQ"} />
+                <YoutubeId id = {"0qCnLLrs94o"} />
             </div>
             <FormWrapper>
                 <UPTitle>
