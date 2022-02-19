@@ -5,7 +5,7 @@ import baloons from '../../assets/aviao7.jpg';
 import Button from "../shared/Button";
 import YoutubeId from "./YoutubeId";
 
-const Register = ({ registerRef, setIntersected, setHeaderShown }) => {
+const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -15,13 +15,18 @@ const Register = ({ registerRef, setIntersected, setHeaderShown }) => {
 
     useEffect(() => {
         const observationOptions = {
-            rootMargin: "0px 0px -108px 0px",
+            rootMargin: "-108px 0px 0px 0px",
+            threshold: 0.2,
         };
 
         const headerObserver = new IntersectionObserver(([entry]) => {
+            if(!entry.isIntersecting){
+                setHeaderShown(true)
+            }
+
             if(entry.isIntersecting){
-                setHeaderShown(false);
-                setIntersected(1);
+                setHeaderShown(false)
+                setIntersected(1)
             } else{
                 setIntersected(prev => prev)
             }
@@ -31,7 +36,7 @@ const Register = ({ registerRef, setIntersected, setHeaderShown }) => {
         if(registerRef.current){
             headerObserver.observe(registerRef.current)
         }
-    }, [registerRef, setIntersected, setHeaderShown]);
+    }, [registerRef, setHeaderShown, setIntersected, intersected]);
 
     return (
         <RegisterContainer ref={registerRef}>
@@ -101,8 +106,7 @@ const RegisterContainer = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 50px 50px 50px;
-    height: 95vh;
+    padding: 108px 50px 50px 50px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(${baloons});
     background-size: cover;
     background-repeat: no-repeat;

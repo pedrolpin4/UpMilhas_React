@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 
-const WhoWeAre = ({ whoWeAreRef, setIntersected}) => {
+const WhoWeAre = ({ whoWeAreRef, setIntersected, setHeaderShown}) => {
     
     useEffect(() => {
         const observationOptions = {
@@ -20,7 +20,7 @@ const WhoWeAre = ({ whoWeAreRef, setIntersected}) => {
         if(whoWeAreRef.current){
             headerObserver.observe(whoWeAreRef.current)
         }
-    }, [whoWeAreRef, setIntersected]);
+    }, [whoWeAreRef, setIntersected, setHeaderShown]);
 
     return(
         <WhoWeAreContainer ref={whoWeAreRef}>

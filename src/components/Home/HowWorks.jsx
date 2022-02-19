@@ -4,12 +4,12 @@ import styled from "styled-components";
 const HowWorks = ({howWorksRef, setIntersected, setHeaderShown}) => {
     useEffect(() => {
         const observationOptions = {
-            rootMargin: "-108px 0px 0px 0px",
+            rootMargin: "0px 0px 0px 0px",
         };
 
         const headerObserver = new IntersectionObserver(([entry]) => {
             if(entry.isIntersecting){
-                setHeaderShown(true)
+                console.log('interceptei');
                 setIntersected(2)
             } else{
                 setIntersected(prev => prev)

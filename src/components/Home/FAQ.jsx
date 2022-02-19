@@ -3,7 +3,7 @@ import List from '@mui/material/List';
 import Question from "./Question";
 import { useEffect } from "react";
 
-const FAQ = ({ faqRef, setIntersected}) => {
+const FAQ = ({ faqRef, setIntersected, setHeaderShown}) => {
     useEffect(() => {
         const observationOptions = {
             rootMargin: "0px 0px -108px 0px",
@@ -21,7 +21,7 @@ const FAQ = ({ faqRef, setIntersected}) => {
         if(faqRef.current){
             headerObserver.observe(faqRef.current)
         }
-    }, [faqRef, setIntersected]);
+    }, [faqRef, setHeaderShown, setIntersected]);
 
     return(
         <FAQContainer ref = {faqRef}>
