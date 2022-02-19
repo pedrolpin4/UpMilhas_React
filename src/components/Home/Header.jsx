@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import whiteLogo from '../assets/white-logo.png';
-import Button from "./Button";
+import whiteLogo from '../../assets/white-logo.png';
+import Button from "../shared/Button";
 
 const Header = ({ intersected, setIntersected }) => {
     return(
@@ -41,6 +41,7 @@ const HeaderContainer = styled.header`
     justify-content: space-between;
     align-items: center;
     padding-right: 40px;
+    z-index: 2;
 
     img {
         width: 150px;

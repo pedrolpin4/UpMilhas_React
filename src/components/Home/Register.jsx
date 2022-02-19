@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components"
-import baloons from '../assets/baloons.jpg';
-import Button from "./Button";
+import baloons from '../../assets/baloons.jpg';
+import Button from "../shared/Button";
 import YoutubeId from "./YoutubeId";
 
 const Register = () => {
