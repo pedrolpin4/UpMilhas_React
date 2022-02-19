@@ -127,9 +127,9 @@ const RegisterContainer = styled.section`
         flex-direction: column;
 
         iframe {
-            width: 90vw;
+            width: 65vw;
             margin-right: 0;
-            height: 300px;
+            height: 400px;
             margin-bottom: 100px;
         }
     }
@@ -139,6 +139,11 @@ const RegisterContainer = styled.section`
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
+
+        iframe{
+            width: 90vw;
+            height: 300px;
+        }
     }
 
 `;

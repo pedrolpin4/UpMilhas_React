@@ -94,6 +94,12 @@ const GoogleMap = styled.div`
     }
 
     @media(max-width: 1000px) {
+        width: 65vw;
+        height: 400px;
+        margin: 75px 0 75px 0;
+    }
+
+    @media(max-width: 600px) {
         width: 90vw;
         height: 300px;
         margin: 75px 0 75px 0;
