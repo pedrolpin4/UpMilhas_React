@@ -28,7 +28,7 @@ const Home = () => {
                 <FAQ faqRef = {faqRef} setIntersected = {setIntersected}/>
             </main>
             <Footer encripted={encripted} setIntersected = {setIntersected} registerRef = {registerRef} howWorksRef = {howWorksRef} whoWeAreRef = {whoWeAreRef} faqRef = {faqRef}/>
-            <Float href={`https://api.whatsapp.com/send?phone=5521967431453&text=${encodeURIComponent(encripted)}.`} target="_blank" rel="noreferrer">
+            <Float href={`https://api.whatsapp.com/send?phone=5511946490400&text=${encodeURIComponent(encripted)}.`} target="_blank" rel="noreferrer">
                 <BsWhatsapp />
             </Float>
         </>

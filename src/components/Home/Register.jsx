@@ -2,14 +2,17 @@ import { useEffect, useState } from "react";
 import { TextField } from '@mui/material';
 import styled from "styled-components"
 import ap from '../../assets/airplane.jpg';
-// import apMobile from '../../assets/airplaneMobile.jpg';
+import apMobile from '../../assets/airplaneMobile.jpg';
 import Button from "../shared/Button";
+import { DateTimePicker, LocalizationProvider } from '@mui/lab';
+import DateAdapter from '@mui/lab/AdapterDayjs';
 import YoutubeId from "./YoutubeId";
 
 const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    const [date, setDate] = useState('');
     const [telError, setTelError] = useState(false);
     const [nameError, setNameError] = useState(false);
     const [emailError, setEmailError] = useState(false);
@@ -43,66 +46,78 @@ const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) 
 
 
     return (
+        <LocalizationProvider dateAdapter={DateAdapter}>
         <RegisterContainer ref={registerRef}>
-            <div>
-                <YoutubeId id = {"0qCnLLrs94o"} />
-            </div>
-            <FormWrapper>
-                <UPTitle>
-                    UP Milhas
-                </UPTitle>
-                <FormContent>
-                    <FormTitle>
-                        Saiba como se cadastrar
-                    </FormTitle>
-                    <TextField
-                        error = {nameError ? true : false}
-                        required
-                        type = "name"
-                        id="outlined-error"
-                        label="Nome"
-                        defaultValue=""
-                        value={name}
-                        color = "info"
-                        onChange={(e) => setName(e.target.value)}
-                        helperText={nameError ? "Digite um nome válido, sem números ou caractéres especiais" : ''}
-                        sx = {{width: '100%', height: 49, marginBottom: 4, borderRadius:'50'}}
-                    />                    
-                    <TextField
-                        error = {emailError ? true : false}
-                        required
-                        type = "email"
-                        id="outlined-error"
-                        label="Email"
-                        defaultValue=""
-                        value={email}
-                        color = "info"
-                        onChange={(e) => setEmail(e.target.value)}
-                        helperText={emailError ? "A entrada deve ser um email válido" : ''}
-                        sx = {{width: '100%', height: 49, marginBottom: 4, borderRadius:'50'}}
-                    />                    
-                    <TextField
-                        error = {telError ? true : false}
-                        required
-                        type = "tel"
-                        id="outlined-error"
-                        label="Telefone"
-                        defaultValue=""
-                        value={phone}
-                        color = "info"
-                        onChange={(e) => setPhone(e.target.value)}
-                        helperText={telError ? "Digite um telefone válido DDD + número" : ''}
-                        sx = {{width: '100%', height: 49, marginBottom: 4, borderRadius:'50'}}
-                    />
-                    <Button padding = "0.8rem 5rem"  paddingMobile = "0.8rem 5rem" marginTop = "20px" type="submit">
-                        Cadastrar
-                    </Button>
-                </FormContent>
-            </FormWrapper>
+                <div>
+                    <YoutubeId id = {"0qCnLLrs94o"} />
+                </div>
+                <FormWrapper>
+                    <UPTitle>
+                        UP Milhas
+                    </UPTitle>
+                    <FormContent onSubmit={(e) => {e.preventDefault()}}>
+                        <FormTitle>
+                            Saiba como se cadastrar
+                        </FormTitle>
+                        <TextField
+                            error = {nameError ? true : false}
+                            required
+                            type = "name"
+                            id="outlined-error"
+                            label="Nome"
+                            defaultValue=""
+                            value={name}
+                            color = "info"
+                            onChange={(e) => setName(e.target.value)}
+                            helperText={nameError ? "Digite um nome válido, sem números ou caractéres especiais" : ''}
+                            sx = {{width: '100%', height: 49, marginBottom: 4, borderRadius:'50'}}
+                        />                    
+                        <TextField
+                            error = {emailError ? true : false}
+                            required
+                            type = "email"
+                            id="outlined-error"
+                            label="Email"
+                            defaultValue=""
+                            value={email}
+                            color = "info"
+                            onChange={(e) => setEmail(e.target.value)}
+                            helperText={emailError ? "A entrada deve ser um email válido" : ''}
+                            sx = {{width: '100%', height: 49, marginBottom: 4, borderRadius:'50'}}
+                        />                    
+                        <TextField
+                            error = {telError ? true : false}
+                            required
+                            type = "tel"
+                            id="outlined-error"
+                            label="Telefone"
+                            defaultValue=""
+                            value={phone}
+                            color = "info"
+                            onChange={(e) => setPhone(e.target.value)}
+                            helperText={telError ? "Digite um telefone válido DDD + número" : ''}
+                            sx = {{width: '100%', height: 49, marginBottom: 4, borderRadius:'50'}}
+                        />
+                        <DateTimePicker 
+                            label="Melhor horário para contato"
+                            renderInput={props => <TextField {...props} /> }                               
+                            format="dd-MM-yyyy hh:mm"
+                            value={date}
+                            onChange={(d) => {setDate(d)}}
+                            fullWidth
+                        />
+                        <Button padding = "0.8rem 5rem"  paddingMobile = "0.8rem 5rem" marginTop = "20px" type="submit">
+                            Cadastrar
+                        </Button>
+                    </FormContent>
+                </FormWrapper>
         </RegisterContainer>
+        </LocalizationProvider>
+
     )
 }
 
+// dayjs(d).format("DD-MM-YYYY HH:mm")
 export default Register;
 
 const RegisterContainer = styled.section`
@@ -118,13 +133,14 @@ const RegisterContainer = styled.section`
     background-blend-mode: normal, darken;
 
     iframe {
-        width: 40vw;
-        height: 22.5vw;
-        margin-right: 10vw;
+        width: 45vw;
+        height: 27vw;
+        margin-right: 6vw;
     }
 
     @media (max-width: 1000px) {
         flex-direction: column;
+        align-items: center;
 
         iframe {
             width: 65vw;
@@ -135,8 +151,7 @@ const RegisterContainer = styled.section`
     }
 
     @media (max-width: 600px) {
-        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url("https://i.pinimg.com/564x/7e/02/45/7e0245f2290fdf04a694ffa8f2e13106.jpg");
-        background-size: cover;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(${apMobile})
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-blend-mode: normal, darken;

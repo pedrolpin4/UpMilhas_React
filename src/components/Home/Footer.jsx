@@ -41,11 +41,26 @@ const Footer = ({ encripted, registerRef, howWorksRef, whoWeAreRef, faqRef}) => 
                     allowFullScreen="" 
                 />
             </GoogleMap>
+            <Infos>
+                <h3>
+                    Informações
+                </h3>
+                <div>
+                    <p>Telefone: (11) 94649-0400</p>
+                </div>
+                <div>
+                    <p>Email: contato@upmilhasaereas.com</p>
+                </div>
+                <div>
+                    <p>Endereço: R. José Getúlio - Liberdade São Paulo - SP</p>
+                </div>
+                <p>Horário de Atendimento: Todos os dias de 09h às 22h (Horário de Brasília)</p>
+            </Infos>
             <Contacts>
                 <h3>
                     Contatos
                 </h3>
-                <a href={`https://api.whatsapp.com/send?phone=5521967431453&text=${encripted}.`} target={"_blank"} rel = "noreferrer">
+                <a href={`https://api.whatsapp.com/send?phone=5511946490400&text=${encripted}.`} target={"_blank"} rel = "noreferrer">
                    <BsWhatsapp size = {50}/>
                 </a>
                 <a href = "https://www.instagram.com/upmilhasaereas" target={"_blank"} rel = "noreferrer">
@@ -67,7 +82,6 @@ const FooterContainer = styled.footer`
     justify-content: center;
     padding: 30px;
     width: 100vw;
-    height: 366px;
     background: #3E4E50;
 
     @media(max-width: 1000px) {
@@ -106,7 +120,7 @@ const GoogleMap = styled.div`
     }
 `
 
-const PageGuide = styled.footer`
+const PageGuide = styled.div`
     display: flex;
     flex-direction: column;
     width: 20vw;
@@ -140,7 +154,57 @@ const PageGuide = styled.footer`
     }
 `;
 
-const Contacts = styled.footer`
+const Infos = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+
+    h3 {
+        margin-bottom: 25px;
+        font-size: 2rem;
+        font-weight: 300;
+        color: #FF6B00;
+    }
+
+    div {
+        display: flex;
+        width: 20vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid rgba(180, 180, 180, 0.7)
+    }
+
+    p {
+        text-decoration: none;
+        text-align: center;
+        font-weight: 300;
+        width: 90%;
+        font-size: 1rem;
+        margin-bottom: 15px;
+        line-height: 37px;
+        color: #FFFEFE;
+        transition: all .4s;
+
+        &:hover {
+            color: #FF6B00;
+        }
+    }
+
+    @media(max-width: 1000px) {
+        width: 90vw;
+        margin: 0 0 50px 0;
+
+        div {
+            width: 80vw;
+        }
+    }
+`;
+
+const Contacts = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
