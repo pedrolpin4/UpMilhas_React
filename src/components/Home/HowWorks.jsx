@@ -53,6 +53,7 @@ const HowWorksContainer = styled.section`
     flex-direction: column;
     align-items: center;
     padding: 50px;
+    background-color: #dadada;
 
     @media (max-width: 1000px) {
         padding: 50px 15px;

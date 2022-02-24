@@ -7,6 +7,7 @@ import WhoWeAre from "../components/Home/WhoWeAre";
 import Footer from "../components/Home/Footer";
 import { BsWhatsapp } from "react-icons/bs";
 import styled from "styled-components";
+import Numbers from "../components/Home/Numbers";
 
 const Home = () => {
     const [intersected, setIntersected] = useState(1);
@@ -24,8 +25,9 @@ const Home = () => {
             <main>
                 <Register registerRef = {registerRef} setIntersected = {setIntersected} setHeaderShown = {setHeaderShown} />
                 <HowWorks howWorksRef = {howWorksRef} setIntersected = {setIntersected}/>
-                <WhoWeAre whoWeAreRef = {whoWeAreRef} setIntersected = {setIntersected}/>
                 <FAQ faqRef = {faqRef} setIntersected = {setIntersected}/>
+                <Numbers />
+                <WhoWeAre whoWeAreRef = {whoWeAreRef} setIntersected = {setIntersected}/>
             </main>
             <Footer encripted={encripted} setIntersected = {setIntersected} registerRef = {registerRef} howWorksRef = {howWorksRef} whoWeAreRef = {whoWeAreRef} faqRef = {faqRef}/>
             <Float href={`https://api.whatsapp.com/send?phone=5511946490400&text=${encodeURIComponent(encripted)}.`} target="_blank" rel="noreferrer">

@@ -18,15 +18,15 @@ const Header = ({ intersected, registerRef, howWorksRef, whoWeAreRef, faqRef, he
                 }} headerShown = {headerShown}>
                     Como Funciona
                 </SectionName>
-                <SectionName isSelected = {intersected === 3} onClick = {() => {
-                    whoWeAreRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
-                }} headerShown = {headerShown}>
-                    Quem Somos
-                </SectionName>
                 <SectionName isSelected = {intersected === 4} onClick = {() => {
                     faqRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
                 }} headerShown = {headerShown}>
                     Perguntas Frequentes
+                </SectionName>
+                <SectionName isSelected = {intersected === 3} onClick = {() => {
+                    whoWeAreRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
+                }} headerShown = {headerShown}>
+                    Quem Somos
                 </SectionName>
             </SectionsWrapper>
             <a href = "https://www.hopmilhas.com.br" target={"_blank"} rel = "noreferrer">
