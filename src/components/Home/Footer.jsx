@@ -49,7 +49,7 @@ const Footer = ({ encripted, registerRef, howWorksRef, whoWeAreRef, faqRef}) => 
                     <p>Telefone: (11) 94649-0400</p>
                 </div>
                 <div>
-                    <p>Email: contato@upmilhasaereas.com</p>
+                    <p>Email: upmilhascontato@gmail.com</p>
                 </div>
                 <div>
                     <p>Endereço: R. José Getúlio - Liberdade São Paulo - SP</p>
