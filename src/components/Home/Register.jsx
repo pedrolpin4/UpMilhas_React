@@ -4,18 +4,38 @@ import styled from "styled-components"
 import ap from '../../assets/airplane.jpg';
 import apMobile from '../../assets/airplaneMobile.jpg';
 import Button from "../shared/Button";
-import { DateTimePicker, LocalizationProvider } from '@mui/lab';
+import { LocalizationProvider } from '@mui/lab';
 import DateAdapter from '@mui/lab/AdapterDayjs';
 import YoutubeId from "./YoutubeId";
+import apiKey from '../../utils/emailkey';
+import emailjs from '@emailjs/browser';
+import dayjs from "dayjs";
 
 const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
-    const [date, setDate] = useState('');
     const [telError, setTelError] = useState(false);
     const [nameError, setNameError] = useState(false);
     const [emailError, setEmailError] = useState(false);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await emailjs.send(apiKey.SERVICE_ID, apiKey.TEMPLATE_ID,{
+                to_name: "upmilhas",
+                name,
+                email,
+                phone,
+                date: dayjs().format('DD/MM/YYYY'),
+                reply_to: email,
+                from_name: name,
+            }, apiKey.USER_ID);    
+            alert("Informações enviadas, entraremos em contato em breve");    
+        } catch (error) {
+            alert("Um erro ocorreu, por favor tente novamente");
+        }
+    }
 
     useEffect(() => {
         const observationOptions = {
@@ -55,7 +75,7 @@ const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) 
                     <UPTitle>
                         UP Milhas
                     </UPTitle>
-                    <FormContent onSubmit={(e) => {e.preventDefault()}}>
+                    <FormContent onSubmit={handleSubmit} id = {"test"}>
                         <FormTitle>
                             Saiba como se cadastrar
                         </FormTitle>
@@ -65,7 +85,6 @@ const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) 
                             type = "name"
                             id="outlined-error"
                             label="Nome"
-                            defaultValue=""
                             value={name}
                             color = "info"
                             onChange={(e) => setName(e.target.value)}
@@ -78,7 +97,6 @@ const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) 
                             type = "email"
                             id="outlined-error"
                             label="Email"
-                            defaultValue=""
                             value={email}
                             color = "info"
                             onChange={(e) => setEmail(e.target.value)}
@@ -91,22 +109,13 @@ const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) 
                             type = "tel"
                             id="outlined-error"
                             label="Telefone"
-                            defaultValue=""
                             value={phone}
                             color = "info"
                             onChange={(e) => setPhone(e.target.value)}
                             helperText={telError ? "Digite um telefone válido DDD + número" : ''}
                             sx = {{width: '100%', height: 49, marginBottom: 4, borderRadius:'50'}}
                         />
-                        <DateTimePicker 
-                            label="Melhor horário para contato"
-                            renderInput={props => <TextField {...props} /> }                               
-                            format="dd-MM-yyyy hh:mm"
-                            value={date}
-                            onChange={(d) => {setDate(d)}}
-                            fullWidth
-                        />
-                        <Button padding = "0.8rem 5rem"  paddingMobile = "0.8rem 5rem" marginTop = "20px" type="submit">
+                        <Button padding = "0.8rem 5rem"  paddingMobile = "0.8rem 5rem" marginTop = "20px" type="submit" form = "test">
                             Cadastrar
                         </Button>
                     </FormContent>
@@ -117,7 +126,6 @@ const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) 
     )
 }
 
-// dayjs(d).format("DD-MM-YYYY HH:mm")
 export default Register;
 
 const RegisterContainer = styled.section`

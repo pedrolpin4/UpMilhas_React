@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FAQ from "../components/Home/FAQ";
 import Header from "../components/Home/Header";
 import HowWorks from "../components/Home/HowWorks";
@@ -8,6 +8,8 @@ import Footer from "../components/Home/Footer";
 import { BsWhatsapp } from "react-icons/bs";
 import styled from "styled-components";
 import Numbers from "../components/Home/Numbers";
+import emailjs from '@emailjs/browser'
+import emailkey from "../utils/emailkey";
 
 const Home = () => {
     const [intersected, setIntersected] = useState(1);
@@ -16,6 +18,10 @@ const Home = () => {
     const howWorksRef = useRef();
     const whoWeAreRef = useRef();
     const faqRef = useRef();
+
+    useEffect(() => {
+        emailjs.init(emailkey)
+    }, [])
 
     const encripted = 'Olá! gostaria de saber mais sobre o cadastro na UP Milhas';
     return(

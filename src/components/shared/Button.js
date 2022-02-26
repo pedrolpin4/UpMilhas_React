@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Button = styled.a`
+const Button = styled.button`
     cursor: pointer;
     position: relative;
     backface-visibility: hidden;
