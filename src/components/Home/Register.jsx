@@ -10,6 +10,7 @@ import YoutubeId from "./YoutubeId";
 import apiKey from '../../utils/emailkey';
 import emailjs from '@emailjs/browser';
 import dayjs from "dayjs";
+import Joi from "joi";
 
 const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) => {
     const [name, setName] = useState('');
@@ -22,6 +23,29 @@ const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            const emailSchema = Joi.string().required();
+            const nameSchema = Joi.string().required();
+            const telfoneSchema = Joi.string().min(10).max(13);
+
+            if(telfoneSchema.validate(phone).error) {
+                setTelError(true);
+                return;
+            }
+
+            if(nameSchema.validate(name).error) {
+                setNameError(true);
+                return;
+            }
+
+            if(emailSchema.validate(email).error) {
+                setEmailError(true);
+                return;
+            }
+
+            setTelError(false);
+            setNameError(false);
+            setEmailError(false);
+
             await emailjs.send(apiKey.SERVICE_ID, apiKey.TEMPLATE_ID,{
                 to_name: "upmilhas",
                 name,
@@ -30,7 +54,8 @@ const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) 
                 date: dayjs().format('DD/MM/YYYY'),
                 reply_to: email,
                 from_name: name,
-            }, apiKey.USER_ID);    
+            }, apiKey.USER_ID);
+            
             alert("Informações enviadas, entraremos em contato em breve");    
         } catch (error) {
             alert("Um erro ocorreu, por favor tente novamente");
