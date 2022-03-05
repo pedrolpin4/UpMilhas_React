@@ -48,10 +48,10 @@ const Float = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
+	width: 60px;
+	height: 60px;
+	bottom: 40px;
+	right: 40px;
 	background-color:#25d366;
 	color:#FFF;
 	border-radius:50px;
