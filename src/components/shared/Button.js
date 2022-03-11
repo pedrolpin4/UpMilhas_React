@@ -46,6 +46,7 @@ const Button = styled.button`
     }
 
     @media(max-width: 1000px) {
+        font-size: 1rem;
         padding: ${props => props.paddingMobile};
     }
 `
