@@ -98,11 +98,11 @@ const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) 
                 </div>
                 <FormWrapper>
                     <UPTitle>
-                        UP Milhas
+                        Compre passagens mais baratas
                     </UPTitle>
                     <FormContent onSubmit={handleSubmit} id = {"test"}>
                         <FormTitle>
-                            Saiba como se cadastrar
+                            Fale com um consultor da nossa equipe
                         </FormTitle>
                         <TextField
                             error = {nameError ? true : false}
@@ -207,14 +207,19 @@ const UPTitle = styled.h1`
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 60px;
-    line-height: 70px;
+    font-size: 40px;
+    line-height: 50px;
     text-align: center;
     color: #FFFDFD;
-    text-transform: uppercase;
     margin-bottom: 30px;
     padding: 20px;
     border: 5px solid #fff;
+    max-width: 495px;
+
+    @media (max-width: 600px) {
+        font-size: 30px;
+        line-height: 40px;
+    }
 `
 
 const FormContent = styled.form`
@@ -229,10 +234,13 @@ const FormContent = styled.form`
 `
 
 const FormTitle = styled.h2`
-    text-transform: uppercase;
     width: min(325px, 70vw);
-    font-size: 32px;
+    font-size: 30px;
     text-align: center;
     color: #3E4E50;
     margin-bottom: 25px;
+    @media (max-width: 600px) {
+        font-size: 26px;
+        line-height: 30px;
+    }
 `
