@@ -97,9 +97,6 @@ const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) 
                     <YoutubeId id = {"0qCnLLrs94o"} />
                 </div>
                 <FormWrapper>
-                    <UPTitle>
-                        Compre passagens mais baratas
-                    </UPTitle>
                     <FormContent onSubmit={handleSubmit} id = {"test"}>
                         <FormTitle>
                             Fale com um consultor da nossa equipe
@@ -179,7 +176,7 @@ const RegisterContainer = styled.section`
             width: 65vw;
             margin-right: 0;
             height: 400px;
-            margin-bottom: 100px;
+            margin-bottom: 60px;
         }
     }
 
@@ -203,27 +200,8 @@ const FormWrapper = styled.div`
     align-items: center;
 `
 
-const UPTitle = styled.h1`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.3);
-    font-size: 40px;
-    line-height: 50px;
-    text-align: center;
-    color: #FFFDFD;
-    margin-bottom: 30px;
-    padding: 20px;
-    border: 5px solid #fff;
-    max-width: 495px;
-
-    @media (max-width: 600px) {
-        font-size: 30px;
-        line-height: 40px;
-    }
-`
-
 const FormContent = styled.form`
+    margin-top: 50px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -232,6 +210,12 @@ const FormContent = styled.form`
     background: #fafafa;
     border-radius: 15px;
     padding: 40px;
+
+    @media (max-width: 600px) {
+        margin-top: 0px;
+        font-size: 26px;
+        line-height: 30px;
+    }
 `
 
 const FormTitle = styled.h2`
