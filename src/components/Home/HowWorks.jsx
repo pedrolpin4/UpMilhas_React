@@ -53,7 +53,7 @@ const HowWorksContainer = styled.section`
     flex-direction: column;
     align-items: center;
     padding: 50px;
-    background-color: #dadada;
+    background-color: #173D57;
 
     @media (max-width: 1000px) {
         padding: 50px 15px;
@@ -90,7 +90,7 @@ const Wrapper = styled.div`
 
     svg {
         font-size: 70px;
-        color: #FF6B00;
+        color: #7EB7DD;
         margin-right: 20px;
     }
 
@@ -98,12 +98,12 @@ const Wrapper = styled.div`
         font-size: 30px;
         overflow-wrap: break-word;
         font-weight: 300;
-        color: #000;
+        color: #fff;
         line-height: 48px;
         transition: all .2s;
 
         &:hover {
-            color: #FF6B00;
+            color: #7EB7DD;
         }
     }
 
@@ -138,10 +138,10 @@ const HowWorksTitle = styled.h1`
     line-height: 56px;
     margin-bottom: 70px;
     text-align: center;
-    color: #000000;
+    color: #FFF;
 
     span {
-        color: #FF6B00;
+        color: #7EB7DD;
     }
 
     @media(max-width: 1000px) {

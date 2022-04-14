@@ -70,7 +70,7 @@ const WhoWeAreTitle = styled.h1`
     color: #000000;
 
     span {
-        color: #FF6B00;
+        color: #3A98D5;
     }
 
     @media(max-width: 1000px) {

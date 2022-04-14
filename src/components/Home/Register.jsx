@@ -207,6 +207,7 @@ const UPTitle = styled.h1`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: rgba(0, 0, 0, 0.3);
     font-size: 40px;
     line-height: 50px;
     text-align: center;
@@ -237,7 +238,7 @@ const FormTitle = styled.h2`
     width: min(325px, 70vw);
     font-size: 30px;
     text-align: center;
-    color: #3E4E50;
+    color: #3A98D5;
     margin-bottom: 25px;
     @media (max-width: 600px) {
         font-size: 26px;

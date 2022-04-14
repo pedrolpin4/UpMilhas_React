@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import whiteLogo from '../../assets/white-logo.png';
-import blackLogo from '../../assets/black-logo.png';
 import Button from "../shared/Button";
 
 const Header = ({ intersected, registerRef, howWorksRef, whoWeAreRef, faqRef, headerShown, setHeaderShown}) => {    
     return(
         <HeaderContainer headerShown = {headerShown} onMouseOver = {() => setHeaderShown(true)}>
             <SectionsWrapper>
-                <img src={headerShown ? whiteLogo : blackLogo} alt="UP milhas logo"/>
+                <img src={whiteLogo} alt="UP milhas logo"/>
                 <SectionName isSelected = {intersected === 1} onClick = {() => {
                     registerRef.current.scrollIntoView({ block: 'end', behavior: 'smooth'})
                 }} headerShown = {headerShown}>
@@ -43,7 +42,7 @@ const HeaderContainer = styled.header`
     top: 0;
     left: 0;
     font-family: Roboto;
-    background: ${props => props.headerShown ?  "#3E4E50" : "transparent"};
+    background: ${props => props.headerShown ?  "#2C74A3" : "transparent"};
     width: 100vw;
     height: 108px;
     display: flex;
@@ -80,11 +79,11 @@ const SectionName = styled.p`
     font-weight: 300;
     font-size: 24px;
     margin: 0 25px;
-    color: ${props => props.isSelected ? "#FF6B00" : (props.headerShown ? "#FFFFFF" : "#000")};
+    color: ${props => props.isSelected ? "#3A98D5" : "#FFFFFF"};
     transition: all .4s;
 
     &:hover {
-        color: #FF6B00;
+        color: #173D57;
     }
 
     @media (max-width: 1000px) {

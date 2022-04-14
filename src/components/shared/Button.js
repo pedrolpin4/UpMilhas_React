@@ -8,7 +8,7 @@ const Button = styled.button`
     display: inline-block;
     font-weight: 300;
     margin-top: ${props => props.marginTop};
-    background-color: #FF6B00;
+    background-color: #3A98D5;
     color: #fff;
     padding: ${props => props.padding};
     border-radius: 3rem;
@@ -41,7 +41,7 @@ const Button = styled.button`
         top: 0;
         left: 0;
         transition: all .4s;
-        background-color: #FF6B00;
+        background-color: #3A98D5;
         z-index: -1;
     }
 

@@ -82,7 +82,7 @@ const FooterContainer = styled.footer`
     justify-content: center;
     padding: 30px;
     width: 100vw;
-    background: #3E4E50;
+    background: #2C74A3;
 
     @media(max-width: 1000px) {
         flex-direction: column;
@@ -130,7 +130,7 @@ const PageGuide = styled.div`
         margin-bottom: 25px;
         font-size: 2rem;
         font-weight: 300;
-        color: #FF6B00;
+        color: #3AedFF;
     }
 
     p {
@@ -143,7 +143,7 @@ const PageGuide = styled.div`
         transition: all .4s;
 
         &:hover {
-            color: #FF6B00;
+            color: #3AedFF;
         }
     }
 
@@ -164,7 +164,7 @@ const Infos = styled.div`
         margin-bottom: 25px;
         font-size: 2rem;
         font-weight: 300;
-        color: #FF6B00;
+        color: #3AedFF;
     }
 
     div {
@@ -190,7 +190,7 @@ const Infos = styled.div`
         transition: all .4s;
 
         &:hover {
-            color: #FF6B00;
+            color: #3AedFF;
         }
     }
 
@@ -214,7 +214,7 @@ const Contacts = styled.div`
         margin-bottom: 25px;
         font-size: 2rem;
         font-weight: 300;
-        color: #FF6B00;
+        color: #3AedFF;
     }
 
     a {
@@ -228,7 +228,7 @@ const Contacts = styled.div`
         transition: all .4s;
 
         &:hover {
-            color: #FF6B00;
+            color: #3AedFF;
         }
     }
 
