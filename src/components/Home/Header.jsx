@@ -28,16 +28,18 @@ const Header = ({ intersected, registerRef, howWorksRef, whoWeAreRef, faqRef, he
                     Quem Somos
                 </SectionName>
             </SectionsWrapper>
-            <a href = "https://portalupmilhas.com/login" target={"_blank"} rel = "noreferrer">
-                <Button padding = "0.8rem 1.6rem" paddingMobile = "0.6rem .8rem">
-                    Acesso ao sistema
-                </Button>
-            </a>
-            <a href = "https://portalupmilhas.com/Cadastro" target={"_blank"} rel = "noreferrer">
-                <Button padding = "0.8rem 1.6rem" paddingMobile = "0.6rem .8rem" color="white">
-                    Cadastrar-se
-                </Button>
-            </a>
+            <SectionsWrapper>
+                <a href = "https://portalupmilhas.com/login" target={"_blank"} rel = "noreferrer">
+                    <Button padding = "0.8rem 1.6rem" paddingMobile = "0.6rem .8rem">
+                        Acesso ao sistema
+                    </Button>
+                </a>
+                <a href = "https://portalupmilhas.com/Cadastro" target={"_blank"} rel = "noreferrer">
+                    <Button padding = "0.8rem 1.6rem" paddingMobile = "0.6rem .8rem" color="white">
+                        Cadastrar-se
+                    </Button>
+                </a>
+            </SectionsWrapper>
         </HeaderContainer>
     )
 }

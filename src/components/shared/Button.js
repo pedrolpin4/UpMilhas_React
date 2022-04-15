@@ -8,9 +8,9 @@ const Button = styled.button`
     display: inline-block;
     font-weight: 300;
     margin-top: ${props => props.marginTop};
-    margin-left: ${props => props.color === 'white' ? "-25px" : "0"};
-    background-color: ${props => props.color === 'white' ? "#fff" : "#3A98D5"};
-    color:  ${props => props.color === 'white' ? "#173D57" : "#fff"};
+    margin-left: ${props => props.color === 'white' ? "15px" : "10px"};
+    background-color: ${props => props.color === 'white' ? "#3A98D5" : "#3A98D5"};
+    color:  ${props => props.color === 'white' ? "#fff" : "#fff"};
     padding: ${props => props.padding};
     border-radius: 3rem;
     font-size: 1rem;
@@ -42,13 +42,17 @@ const Button = styled.button`
         top: 0;
         left: 0;
         transition: all .4s;
-        background-color: ${props => props.color === 'white' ? "#fff" : "#3A98D5"};
+        background-color: ${props => props.color === 'white' ? "#3A98D5" : "#3A98D5"};
         z-index: -1;
+    }
+
+    @media(min-width: 1600px) {
+        font-size: 1.3rem;
     }
 
     @media(max-width: 1000px) {
         font-size: .8rem;
-        margin-left: ${props => props.color === 'white' ? "-10px" : "0"};
+        margin-left: ${props => props.color === 'white' ? "15px" : "0"};
         padding: ${props => props.paddingMobile};
     }
 `
