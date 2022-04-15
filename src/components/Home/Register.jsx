@@ -55,6 +55,9 @@ const Register = ({ registerRef, setIntersected, setHeaderShown, intersected }) 
                 reply_to: email,
                 from_name: name,
             }, apiKey.USER_ID);
+
+            window.location.href="http://portalupmilhas.com/Cadastro";
+
             
             alert("Informações enviadas, entraremos em contato em breve");    
         } catch (error) {

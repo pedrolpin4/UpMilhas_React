@@ -28,9 +28,9 @@ const Header = ({ intersected, registerRef, howWorksRef, whoWeAreRef, faqRef, he
                     Quem Somos
                 </SectionName>
             </SectionsWrapper>
-            <a href = "https://portalupmilhas.com" target={"_blank"} rel = "noreferrer">
+            <a href = "https://portalupmilhas.com/Cadastro" target={"_blank"} rel = "noreferrer">
                 <Button padding = "0.6rem 2.3rem" paddingMobile = "0.4rem 1.3rem">
-                    Acesso ao portal
+                    Cadastrar-se no portal
                 </Button>
             </a>
         </HeaderContainer>
