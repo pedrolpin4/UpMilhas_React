@@ -28,9 +28,14 @@ const Header = ({ intersected, registerRef, howWorksRef, whoWeAreRef, faqRef, he
                     Quem Somos
                 </SectionName>
             </SectionsWrapper>
+            <a href = "https://portalupmilhas.com/login" target={"_blank"} rel = "noreferrer">
+                <Button padding = "0.8rem 1.6rem" paddingMobile = "0.6rem .8rem">
+                    Acesso ao sistema
+                </Button>
+            </a>
             <a href = "https://portalupmilhas.com/Cadastro" target={"_blank"} rel = "noreferrer">
-                <Button padding = "0.6rem 2.3rem" paddingMobile = "0.4rem 1.3rem">
-                    Cadastrar-se no portal
+                <Button padding = "0.8rem 1.6rem" paddingMobile = "0.6rem .8rem" color="white">
+                    Cadastrar-se
                 </Button>
             </a>
         </HeaderContainer>
@@ -48,10 +53,13 @@ const HeaderContainer = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 40px;
+    padding-right: 20px;
     z-index: 2;
     box-shadow: ${props => props.headerShown ? "2px 0px 2px 2px rgba(0, 0, 0, 0.5)" : "none"};
     transition: all .4s;
+    a {
+        text-decoration: none;
+    }
 
     img {
         width: 150px;
@@ -60,7 +68,7 @@ const HeaderContainer = styled.header`
 
     @media (max-width: 1000px) {
         height: 90px;
-        padding: 0px 25px 0px 10px;
+        padding: 0px 15px 0px 10px;
 
         img{
             width: 100px;
@@ -73,7 +81,7 @@ const SectionsWrapper = styled.div`
     align-items: center;
 `;
 
-const SectionName = styled.p`
+const SectionName = styled.h3`
     cursor: pointer;
     text-align: center;
     font-weight: 300;
