@@ -8,13 +8,13 @@ const Numbers = () => {
             </NumbersTitle>
             <Wrappers>
                 <Wrapper>
-                    <div><h2>+500</h2><p>Passagens obtidas em 2022</p></div>
+                    <div><h2>+1000</h2><p>Passagens obtidas em 2022</p></div>
                 </Wrapper>
                 <Wrapper>
-                    <div><h2>+67M</h2><p>Milhas movimentadas</p></div>
+                    <div><h2>+120M</h2><p>Milhas movimentadas</p></div>
                 </Wrapper>
                 <Wrapper>
-                    <div><h2>20</h2><p>Clientes corporativos</p></div>
+                    <div><h2>70</h2><p>Clientes corporativos</p></div>
                 </Wrapper>
             </Wrappers>
         </NumbersContainer>
