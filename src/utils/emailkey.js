@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-    USER_ID: '9mSqLBIB_levMshoD',
-    TEMPLATE_ID: 'template_kmlej9k',
-    SERVICE_ID: 'service_te4ldln'
+    USER_ID: 'N-4cfqjx01YJI-84v',
+    TEMPLATE_ID: 'template_t8frke2',
+    SERVICE_ID: 'service_b7s246j'
 }
