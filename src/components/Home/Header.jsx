@@ -29,7 +29,7 @@ const Header = ({ intersected, registerRef, howWorksRef, whoWeAreRef, faqRef, he
                 </SectionName>
             </SectionsWrapper>
             <SectionsWrapper>
-                <a href = "https://portalupmilhas.com/login" target={"_blank"} rel = "noreferrer">
+                <a href = "https://portal.upmilhasaereas.com/logar?next=/" target={"_blank"} rel = "noreferrer">
                     <Button padding = "0.8rem 1.6rem" paddingMobile = "0.6rem .8rem">
                         Acesso ao sistema
                     </Button>
